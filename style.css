@@ -1,0 +1,23 @@
+div{
+    margin: 2em auto auto 2em;
+}
+table{
+    border-top: 0.5px solid #AAAAA0;
+    border-bottom:0.5px solid #AAAAA0;
+    border-collapse: collapse;
+    padding:20px;
+  }
+th{
+    border-bottom:0.5px solid #AAAAA0;
+    border-collapse: collapse;
+}
+td{
+    padding:5px;
+}
+h4{
+    background-color: #BFBFBF;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
