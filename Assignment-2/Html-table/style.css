@@ -1,0 +1,22 @@
+.table-head{
+    border: 0.1px solid #bfbfbf;
+  }
+  table,td{
+      border: 0.1px dotted #bfbfbf;
+      border-collapse: collapse;
+      font-size:15px;
+      padding:6px 25px 6px 25px;
+      text-align:center;
+  }
+  tr:nth-child(even){
+      background-color: #EAEAEA;
+    }
+  .firstHeading{
+    color:red;
+  }
+  .SecondHeading{
+    color: blue;  
+  }
+  .thirdHeading{
+      color:#92298F;
+  }
