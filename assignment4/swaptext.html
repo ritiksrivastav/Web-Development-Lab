@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript</title>
+	
+</head>
+<style>
+	.p1
+	{
+		color: red;
+	}
+	.p2
+	{
+		color: blue;
+	}
+</style>
+<body>
+	<p class="p1">welcome</p>
+	<p class="p2">goodbye</p>
+	
+     <button onclick="swap()">swap</button>
+     <script type="text/javascript">
+     	function swap()
+     	{
+     		p1=document.getElementsByClassName('p1');
+     		p2=document.getElementsByClassName('p2');
+     		tmp=p1[0].textContent;
+     		p1[0].textContent=p2[0].textContent;
+     		p2[0].textContent=tmp;
+     		
+
+     		
+
+     		
+     }
+     </script>
+
+</body>
+</html>
