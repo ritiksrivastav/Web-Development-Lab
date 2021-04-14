@@ -1,0 +1,80 @@
+
+<html>
+    <head>
+        <title>Number Guessing game</title>
+        <style>
+
+        </style>
+        <script>
+            var a=0
+            var rand = 1 + Math.floor(Math.random() * 100)
+            function guessRandom()
+            {
+                let val=parseInt(document.getElementById("numb").value);
+                let result = document.getElementById('result')
+                let hints = document.getElementById('hints')
+                let prev_guess = document.getElementById('prev_guess')
+                if(a >= 10) return
+                prev_guess.innerHTML = prev_guess.innerHTML + val.toString() + ' '
+                if(val === rand)
+                {
+                    result.innerText="Congratulations! You got it right!"
+                    result.style.backgroundColor="green"
+                    result.style.color="white"
+                    hints.innerText=""
+                    let new_game=document.createElement('input')
+                    new_game.setAttribute('type','button')
+                    new_game.setAttribute('id','new_game')
+                    new_game.setAttribute('value','start a new game')
+                    new_game.setAttribute('onclick','newGame()')
+                    let body=document.getElementsByTagName('body')
+                    body[0].appendChild(new_game);
+                }
+                else{
+                    a++;
+                    result.innerText = 'Wrong!'
+                    result.style.backgroundColor = 'red'
+                    result.style.color = "white"
+                    if(val > rand) hints.innerText="Last guess was too high!"
+                    else hints.innerText = "Last guess was too low!"
+                    if(a == 10)
+                    {
+                        hints.innerText=""
+                        let new_game = document.createElement('input')
+                        new_game.setAttribute('type', 'button')
+                        new_game.setAttribute('id', 'new_game')
+                        new_game.setAttribute('value', 'start a new game')
+                        new_game.setAttribute('onclick', 'newGame()')
+                        let body = document.getElementsByTagName('body')
+                        body[0].appendChild(new_game);
+                    }
+                }
+            }
+            function newGame()
+            {
+                a=0;
+                rand = 1 + Math.floor(Math.random() * 100)
+                let prev_guess = document.getElementById('prev_guess')
+                let result = document.getElementById('result')
+                prev_guess.innerHTML = "Previous guesses: "
+                result.innerText=""
+                result.style.backgroundColor=""
+                document.getElementById('new_game').remove()
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Number Guessing Game</h1>
+        <p>We have selected a random number between 1 and 100.See if you can guess it in 10 turns or fewer.We'll tell you if your guess was too high or too low.</p>
+
+        Enter a guess:
+        <input type="text" name="numb" id="numb">
+        <input type="button" name="submit" id="submit" onclick="guessRandom()" value="Submit guess">
+
+        <p  id="prev_guess">Previous guesses: </p>
+
+        <p id="result"></p>
+
+        <p id="hints"></p>
+    </body>
+</html>
